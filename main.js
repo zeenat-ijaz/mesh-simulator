@@ -59,7 +59,7 @@ const execute = () => {
     let N = parseInt(selNodes.value);
     let Q = parseInt(rngShift.value);
     
-    statusBar.innerText = `⚙️ Processing circular shift for N=${N}, Q=${Q}...`;
+    statusBar.innerHTML = `<i class="fas fa-cog fa-spin"></i> Processing circular shift for N=${N}, Q=${Q}...`;
     
     const results = performCalculations(N, Q);
     
@@ -67,18 +67,18 @@ const execute = () => {
     statMesh.innerText = `${results.meshTotal} step(s) [Row:${results.rShift}, Col:${results.cShift}]`;
     
     if (results.meshTotal < results.ringTotal) {
-        conclBox.innerHTML = `✅ <strong>Optimal:</strong> Mesh architecture reduces routing overhead by ${results.ringTotal - results.meshTotal} step(s).`;
+        conclBox.innerHTML = `<i class="fas fa-check-circle" style="color: #10b981;"></i> <strong>Optimal:</strong> Mesh architecture reduces routing overhead by ${results.ringTotal - results.meshTotal} step(s).`;
     } else if (results.meshTotal === results.ringTotal) {
-        conclBox.innerHTML = `⚖️ <strong>Neutral:</strong> Both topologies require equal steps.`;
+        conclBox.innerHTML = `<i class="fas fa-balance-scale" style="color: #eab308;"></i> <strong>Neutral:</strong> Both topologies require equal steps.`;
     } else {
-        conclBox.innerHTML = `⚠️ <strong>Sub-optimal:</strong> Ring is faster for this specific shift.`;
+        conclBox.innerHTML = `<i class="fas fa-exclamation-triangle" style="color: #ef4444;"></i> <strong>Sub-optimal:</strong> Ring is faster for this specific shift.`;
     }
     
     drawMatrix(canvStart, results.layoutStart, null);
     drawMatrix(canvMid, results.layoutMid, 'row');
     drawMatrix(canvEnd, results.layoutEnd, 'col');
     
-    statusBar.innerText = '✅ Shift completed and rendered. Math verified.';
+    statusBar.innerHTML = '<i class="fas fa-check-circle" style="color: #10b981;"></i> Shift completed and rendered. Math verified.';
 };
 
 const resetUI = () => {

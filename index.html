@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zeenat: 2D Mesh Shifter Simulator</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="layout-wrapper">
     <header class="top-nav">
-      <h1>🌀 2D Mesh Circular Shifter</h1>
+      <h1><i class="fas fa-sync-alt"></i> 2D Mesh Circular Shifter</h1>
       <div class="student-info">
-        <span class="chip">🧑‍🎓 Zeenat Ijaz</span>
-        <span class="chip">🆔 23F-0054</span>
-        <span class="chip">📚 SE-6B PDC A2</span>
+        <span class="chip"><i class="fas fa-user-graduate"></i> Zeenat Ijaz</span>
+        <span class="chip"><i class="fas fa-id-card"></i> 23F-0054</span>
+        <span class="chip"><i class="fas fa-book"></i> AI-6A PDC A2</span>
       </div>
     </header>
 
@@ -22,7 +23,7 @@
       <!-- Sidebar Controls -->
       <aside class="sidebar">
         <div class="panel controls-panel">
-          <h3>🎛️ Simulation Controls</h3>
+          <h3><i class="fas fa-sliders-h"></i> Simulation Controls</h3>
           
           <div class="input-block">
             <label>Matrix Dimension (N)</label>
@@ -42,13 +43,13 @@
           </div>
 
           <div class="action-buttons">
-            <button id="btn-exec" class="primary-btn">▶️ Execute Shift</button>
-            <button id="btn-reset" class="secondary-btn">🔄 Reset</button>
+            <button id="btn-exec" class="primary-btn"><i class="fas fa-play"></i> Execute Shift</button>
+            <button id="btn-reset" class="secondary-btn"><i class="fas fa-undo"></i> Reset</button>
           </div>
         </div>
 
         <div class="panel stats-panel">
-          <h3>📊 Execution Stats</h3>
+          <h3><i class="fas fa-chart-bar"></i> Execution Stats</h3>
           <div class="stat-row">
             <span>Ring Steps:</span>
             <strong id="stat-ring">--</strong>
@@ -70,15 +71,15 @@
         
         <div class="grid-display-grid">
           <div class="grid-box">
-            <h4>📦 Initial Layout</h4>
+            <h4><i class="fas fa-box"></i> Initial Layout</h4>
             <div id="canvas-start" class="svg-host"></div>
           </div>
           <div class="grid-box">
-            <h4>➡️ Post Row-Shift</h4>
+            <h4><i class="fas fa-arrow-right"></i> Post Row-Shift</h4>
             <div id="canvas-mid" class="svg-host"></div>
           </div>
           <div class="grid-box">
-            <h4>⬇️ Post Col-Shift (Final)</h4>
+            <h4><i class="fas fa-arrow-down"></i> Post Col-Shift (Final)</h4>
             <div id="canvas-end" class="svg-host"></div>
           </div>
         </div>
