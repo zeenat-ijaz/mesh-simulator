@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeenat: 2D Mesh Shifter Simulator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="layout-wrapper">
+    <header class="top-nav">
+      <h1>🌀 2D Mesh Circular Shifter</h1>
+      <div class="student-info">
+        <span class="chip">🧑‍🎓 Zeenat Ijaz</span>
+        <span class="chip">🆔 23F-0054</span>
+        <span class="chip">📚 SE-6B PDC A2</span>
+      </div>
+    </header>
+
+    <main class="content-area">
+      <!-- Sidebar Controls -->
+      <aside class="sidebar">
+        <div class="panel controls-panel">
+          <h3>🎛️ Simulation Controls</h3>
+          
+          <div class="input-block">
+            <label>Matrix Dimension (N)</label>
+            <select id="sel-nodes">
+              <option value="4">4 nodes (2x2)</option>
+              <option value="9">9 nodes (3x3)</option>
+              <option value="16" selected>16 nodes (4x4)</option>
+              <option value="25">25 nodes (5x5)</option>
+              <option value="36">36 nodes (6x6)</option>
+              <option value="64">64 nodes (8x8)</option>
+            </select>
+          </div>
+
+          <div class="input-block">
+            <label>Shift Value (Q): <span id="lbl-shift-val">5</span></label>
+            <input type="range" id="range-shift" min="1" max="15" value="5">
+          </div>
+
+          <div class="action-buttons">
+            <button id="btn-exec" class="primary-btn">▶️ Execute Shift</button>
+            <button id="btn-reset" class="secondary-btn">🔄 Reset</button>
+          </div>
+        </div>
+
+        <div class="panel stats-panel">
+          <h3>📊 Execution Stats</h3>
+          <div class="stat-row">
+            <span>Ring Steps:</span>
+            <strong id="stat-ring">--</strong>
+          </div>
+          <div class="stat-row">
+            <span>Mesh Steps:</span>
+            <strong id="stat-mesh">--</strong>
+          </div>
+          <hr>
+          <div id="conclusion-box" class="conclusion">Awaiting execution...</div>
+        </div>
+      </aside>
+
+      <!-- Visualization Area -->
+      <section class="visualizer">
+        <div class="status-bar" id="status-bar">
+          Status: Ready to execute circular shift.
+        </div>
+        
+        <div class="grid-display-grid">
+          <div class="grid-box">
+            <h4>📦 Initial Layout</h4>
+            <div id="canvas-start" class="svg-host"></div>
+          </div>
+          <div class="grid-box">
+            <h4>➡️ Post Row-Shift</h4>
+            <div id="canvas-mid" class="svg-host"></div>
+          </div>
+          <div class="grid-box">
+            <h4>⬇️ Post Col-Shift (Final)</h4>
+            <div id="canvas-end" class="svg-host"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
